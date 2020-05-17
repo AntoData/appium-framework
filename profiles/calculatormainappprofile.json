@@ -1,0 +1,1 @@
+{"platformName": "Android", "platformVersion": "9", "deviceName": " daisy_sprout", "automationName": "UiAutomator1", "appPackage": "com.google.android.calculator", "appActivity": "com.android.calculator2.Calculator", "adbExecTimeout": "200000"}

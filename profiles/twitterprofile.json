@@ -1,0 +1,1 @@
+{"platformName": "Android", "platformVersion": "9", "deviceName": " daisy_sprout", "automationName": "UiAutomator1", "appPackage": "com.twitter.android", "appActivity": "com.twitter.app.main.StartActivity", "adbExecTimeout": "200000"}
