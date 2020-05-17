@@ -1,0 +1,1 @@
+Here for each test a folder will be created that will contain the screenshots
