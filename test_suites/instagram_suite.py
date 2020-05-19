@@ -9,24 +9,37 @@ from app_window_objects.instagrammainapp import InstagramMainApp
 from app_window_objects.instagramprofileapp import InstagramProfileApp
 from appium.webdriver import webelement
 
+from videoRecorder.videoRecorder.desktopBrowserRecorder import DesktopBrowserRecorder
+
 
 class InstagramTestSuite(unittest.TestCase):
+
+    video_recorder = None
+
+    def tearDown(self):
+        if self.video_recorder is not None:
+            self.video_recorder.stopRecordingSession()
 
     def test_login(self, username: str = None) -> InstagramMainApp:
         if username is None:
             username = input("Give us your username: ")
         password = input("Give us your password: ")
         instagram: InstagramLoginApp = ins.InstagramLoginApp()
+        self.video_recorder = DesktopBrowserRecorder("..//videos", ".mp4", instagram.driver)
+        self.video_recorder.startRecordingSession()
         instagram.click_on_login()
         instagram.set_username(username)
         instagram.set_password(password)
         time.sleep(5)
         instagram_main: InstagramMainApp = instagram.click_on_button_to_login()
         self.assertTrue(instagram_main.is_title_bar_visible(), "We were not logged in")
+        time.sleep(5)
         return instagram_main
 
     def test_dms(self) -> None:
         instagram_main: InstagramMainApp = self.test_login()
+        self.video_recorder = DesktopBrowserRecorder("..//videos", ".mp4", instagram_main.driver)
+        self.video_recorder.startRecordingSession()
         instagram_dm: InstagramDMsApp = instagram_main.click_on_button_dm()
         name = input("Who do you want to send a DM to? ")
         # noinspection PyTypeChecker
@@ -41,6 +54,8 @@ class InstagramTestSuite(unittest.TestCase):
     def test_profile(self) -> None:
         username = input("Give us your username: ")
         instagram_main: InstagramMainApp = self.test_login(username)
+        self.video_recorder = DesktopBrowserRecorder("..//videos", ".mp4", instagram_main.driver)
+        self.video_recorder.startRecordingSession()
         time.sleep(3)
         instagram_profile: InstagramProfileApp = instagram_main.click_on_button_profile()
         time.sleep(3)
@@ -51,6 +66,8 @@ class InstagramTestSuite(unittest.TestCase):
     def test_post_image(self) -> None:
         username = input("Give us your username: ")
         instagram_main: InstagramMainApp = self.test_login(username)
+        self.video_recorder = DesktopBrowserRecorder("..//videos", ".mp4", instagram_main.driver)
+        self.video_recorder.startRecordingSession()
         time.sleep(5)
         instagram_post: InstagramAddPostApp = instagram_main.click_on_button_post()
         time.sleep(3)

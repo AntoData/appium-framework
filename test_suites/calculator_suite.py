@@ -2,14 +2,23 @@ import time
 import unittest
 import selenium
 from app_window_objects import calculatormainapp as cmp
+from videoRecorder.videoRecorder.desktopBrowserRecorder import DesktopBrowserRecorder
 
 
 class CalculatorTestSuite(unittest.TestCase):
+
+    video_recorder = None
+
+    def tearDown(self):
+        if self.video_recorder is not None:
+            self.video_recorder.stopRecordingSession()
 
     def test_add_two_numbers(self):
         n = input("Select first number\n")
         m = input("Select second number\n")
         self.calculator = cmp.CalculatorMainApp()
+        self.video_recorder = DesktopBrowserRecorder("..//videos", ".mp4", self.calculator.driver)
+        self.video_recorder.startRecordingSession()
         try:
             self.calculator.click_on_arrow()
         except selenium.common.exceptions.NoSuchElementException:
@@ -27,6 +36,8 @@ class CalculatorTestSuite(unittest.TestCase):
         n = input("Select first number\n")
         m = input("Select second number\n")
         self.calculator = cmp.CalculatorMainApp()
+        self.video_recorder = DesktopBrowserRecorder("..//videos", ".mp4", self.calculator.driver)
+        self.video_recorder.startRecordingSession()
         try:
             self.calculator.click_on_arrow()
         except selenium.common.exceptions.NoSuchElementException:
@@ -44,6 +55,8 @@ class CalculatorTestSuite(unittest.TestCase):
         n = input("Select first number\n")
         m = input("Select second number\n")
         self.calculator = cmp.CalculatorMainApp()
+        self.video_recorder = DesktopBrowserRecorder("..//videos", ".mp4", self.calculator.driver)
+        self.video_recorder.startRecordingSession()
         try:
             self.calculator.click_on_arrow()
         except selenium.common.exceptions.NoSuchElementException:
@@ -61,6 +74,8 @@ class CalculatorTestSuite(unittest.TestCase):
         n = input("Select first number\n")
         m = input("Select second number\n")
         self.calculator = cmp.CalculatorMainApp()
+        self.video_recorder = DesktopBrowserRecorder("..//videos", ".mp4", self.calculator.driver)
+        self.video_recorder.startRecordingSession()
         try:
             self.calculator.click_on_arrow()
         except selenium.common.exceptions.NoSuchElementException:
@@ -76,6 +91,8 @@ class CalculatorTestSuite(unittest.TestCase):
 
     def test_delete_number(self):
         self.calculator = cmp.CalculatorMainApp()
+        self.video_recorder = DesktopBrowserRecorder("..//videos", ".mp4", self.calculator.driver)
+        self.video_recorder.startRecordingSession()
         try:
             self.calculator.click_on_arrow()
         except selenium.common.exceptions.NoSuchElementException:
