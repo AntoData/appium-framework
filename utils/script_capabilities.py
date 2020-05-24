@@ -13,6 +13,8 @@ def main():
     print("Open the app you want to automate")
     profile = input("Please provide a name for this profile to be saved:\n")
     to_file_capabilities(profile)
+    print("By default the property 'automationName' will be set to 'UiAutomator1'")
+    print("If you see in Appium logs that the test does not run the app, try changing to 'UiAutomator2'")
 
 
 if __name__ == '__main__':

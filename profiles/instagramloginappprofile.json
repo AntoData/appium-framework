@@ -1,1 +1,1 @@
-{"platformName": "Android", "platformVersion": "9", "deviceName": " daisy_sprout", "automationName": "UiAutomator1", "appPackage": "com.instagram.android", "appActivity": "com.instagram.mainactivity.MainActivity", "adbExecTimeout": "200000"}
+{"platformName": "Android", "platformVersion": "10", "deviceName": " generic_x86_arm", "automationName": "UiAutomator2", "appPackage": "com.instagram.android", "appActivity": "com.instagram.mainactivity.MainActivity", "adbExecTimeout": "200000"}

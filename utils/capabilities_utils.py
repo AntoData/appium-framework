@@ -55,7 +55,12 @@ def get_current_app_properties() -> bytes:
     :return: Bytes that are the response of our adb command
     """
     # We execute the following command that returns only the properties of our current device
-    properties = subprocess.run('adb shell "dumpsys window windows | grep -E "mCurrentFocus"', stdout=subprocess.PIPE)
+    properties = subprocess.run('adb shell "dumpsys window windows | grep -E "mCurrentFocus"',
+                                stdout=subprocess.PIPE)
+    # If because of the device we don't get anything after running that command, we run this other one
+    if str(properties.stdout) == "b''":
+        properties = subprocess.run('adb shell "dumpsys window windows | grep -E "mObscuringWindow"',
+                                    stdout=subprocess.PIPE)
     # We return the response of that command
     return properties.stdout
 
@@ -69,15 +74,8 @@ def get_apppackage_appactivity() -> dict:
     # We use the method get_current_app_properties described above to get all the properties for our current app
     st_properties: [str] = str(get_current_app_properties())
     # We perform several transformation in that variable to get the properties in the right format
-    st_properties = st_properties.replace("b'  mCurrentFocus=Window", "")
-    st_properties = st_properties.replace("{", "")
-    st_properties = st_properties.replace("}", "")
-    st_properties = st_properties.replace("\\r", "")
-    st_properties = st_properties.replace("\\n", "")
-    st_properties = st_properties.replace("'", "")
-    st_properties = st_properties.split(" ")
-    # We get the last property returned by the command executed previously
-    package_activity = st_properties[len(st_properties) - 1]
+    st_properties = re.search("[a-zA-Z.0-9]+/[a-zA-Z.0-9]+",st_properties)
+    package_activity = st_properties.group(0)
     # We split the different properties that are part of that property we selected previously
     package_activity = package_activity.split("/")
     # We build the dictionary with the right properties for our current app
@@ -97,13 +95,17 @@ def get_device_properties() -> dict:
     # We create an empty dictionary
     dict_device_properties: dict = {}
     # We the property "ro.build.software.version" to a variable called v_so
-    v_so = dict_properties["ro.build.software.version"]
-    # We perform a series of transformations to that property's value
-    v_so = v_so.replace(" ", "")
-    v_so = re.split('(\d+)', v_so)
-    # We add to the variable dict_device_properties the properties we will need to perform our tests
-    dict_device_properties["platformName"] = v_so[0]
-    dict_device_properties["platformVersion"] = v_so[1]
+    if "ro.build.software.version" in dict_properties.keys():
+        v_so = dict_properties["ro.build.software.version"]
+        # We perform a series of transformations to that property's value
+        v_so = v_so.replace(" ", "")
+        v_so = re.split('(\d+)', v_so)
+        # We add to the variable dict_device_properties the properties we will need to perform our tests
+        dict_device_properties["platformName"] = v_so[0]
+        dict_device_properties["platformVersion"] = v_so[1]
+    elif "ro.build.version.release" in dict_properties.keys():
+        dict_device_properties["platformName"] = dict_properties["gsm.operator.alpha"].replace(" ","")
+        dict_device_properties["platformVersion"] = dict_properties["ro.build.version.release"].replace(" ","")
     dict_device_properties["deviceName"] = dict_properties["ro.product.device"]
     # We return that dictionary
     return dict_device_properties
