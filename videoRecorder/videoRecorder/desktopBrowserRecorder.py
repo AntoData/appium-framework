@@ -26,7 +26,7 @@ This module contains the following classes:
 __version__= "0.2.5"
 from selenium import webdriver
 import imageio
-import pyautogui
+#import pyautogui
 import time
 import threading
 from datetime import datetime
@@ -102,7 +102,8 @@ class DesktopBrowserRecorder:
             else:
                 #Otherwise, we are recording the desktop and take the screenshot from
                 #the desktop and save it too to the frame file
-                pyautogui.screenshot(frameFileName)
+                #pyautogui.screenshot(frameFileName)
+                pass
             #We use imageio to open that file and assign it to the attribute frame
             #that we will use to add to the video in the main threat
             self.frame = imageio.imread(frameFileName)

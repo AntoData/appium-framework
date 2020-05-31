@@ -47,8 +47,39 @@ class AppWindowObject(ABC):
         # This will have to be done for the first page object in our app
         if driver is None:
             # We get the capabilities from the json file with the same name as our class in lower case in folder
-            # profile
-            self.capabilities: dict = get_capabilities_from_file(type(self).__name__.lower() + "profile.json")
+            # profile or with the json file that has been written in the temporal file "../tmp/current_test_profile.txt"
+            # if this was run from the module interactive_test_runner.py which allows us to schedule and program
+            # different test in different devices to be run one after the other
+            profile_file: str = ""
+            file = None
+            # We try to open the file where the json file is set
+            try:
+                file = open("../tmp/current_test_profile.txt", "r")
+                # If it exists we read it, line by line
+                for line in file:
+                    # We add the line to the variable profile_line
+                    profile_file += line
+            except FileNotFoundError as e:
+                # In case the file does not exist, we just pass because it means we are running this using the
+                # module in test_suites
+                print("tmp file not found: {0}".format(e))
+            finally:
+                # However, we always try to close the file and remove it in case it exists
+                if file is not None:
+                    file.close()
+                    try:
+                        # We try to remove the file
+                        os.remove("../tmp/current_test_profile.txt")
+                    except FileNotFoundError as e:
+                        # If the file can't be found, it means we don't need to delete it and we can go on
+                        print("tmp file not found: {0}".format(e))
+            # If the variable profile_file is None or "", means that we didn't read which json profile file we have to
+            # use, which means we run this probably from the test suite module, so we use the default file
+            if profile_file is None or profile_file == "":
+                self.capabilities: dict = get_capabilities_from_file(type(self).__name__.lower() + "profile.json")
+            else:
+                # In other case, we set a specific json profile file, so we use it
+                self.capabilities: dict = get_capabilities_from_file(profile_file)
             # We create the webdriver instance using the capabilities we got from the json file
             self.driver: webdriver = webdriver.Remote(self.get_server(type(self).__name__.lower()), self.capabilities)
             # As this is the first activity of the test, we have to create the folder for the screenshots for this

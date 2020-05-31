@@ -1,3 +1,4 @@
+import pathlib
 import time
 import unittest
 from app_window_objects import instagramloginapp as ins
@@ -8,9 +9,8 @@ from app_window_objects.instagramloginapp import InstagramLoginApp
 from app_window_objects.instagrammainapp import InstagramMainApp
 from app_window_objects.instagramprofileapp import InstagramProfileApp
 from appium.webdriver import webelement
-
-from videoRecorder.videoRecorder.desktopBrowserRecorder import DesktopBrowserRecorder
-
+from desktopBrowserRecorder import DesktopBrowserRecorder
+#from videoRecorder.videoRecorder.desktopBrowserRecorder import DesktopBrowserRecorder
 
 class InstagramTestSuite(unittest.TestCase):
 
@@ -80,6 +80,7 @@ class InstagramTestSuite(unittest.TestCase):
         self.assertTrue(instagram_photo_post is not None, "Photo was not uploaded")
         instagram_profile.click_photo_n(0)
 
-
+"""
 if __name__ == '__main__':
     unittest.main()
+"""

@@ -1,0 +1,2 @@
+Execute:
+npm install -g appium
