@@ -2,13 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0b508150-1ee4-49ce-97a7-0fa5d8d3c4aa" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/test_suites/interactive_test_runner.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/abs_class/appwindowobject.py" beforeDir="false" afterPath="$PROJECT_DIR$/abs_class/appwindowobject.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/profiles/instagramloginappprofile.json" beforeDir="false" afterPath="$PROJECT_DIR$/profiles/instagramloginappprofile-d.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test_suites/calculator_suite.py" beforeDir="false" afterPath="$PROJECT_DIR$/test_suites/calculator_suite.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test_suites/instagram_suite.py" beforeDir="false" afterPath="$PROJECT_DIR$/test_suites/instagram_suite.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/videoRecorder/videoRecorder/desktopBrowserRecorder.py" beforeDir="false" afterPath="$PROJECT_DIR$/videoRecorder/videoRecorder/desktopBrowserRecorder.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test_suites/interactive_test_runner.py" beforeDir="false" afterPath="$PROJECT_DIR$/test_suites/interactive_test_runner.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -175,22 +170,22 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="413" y="114" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1366.728@0.0.1366.728" timestamp="1590926397019" />
-    <state width="1345" height="179" key="GridCell.Tab.0.bottom" timestamp="1590950623554">
+    <state width="1345" height="179" key="GridCell.Tab.0.bottom" timestamp="1590955465006">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1345" height="179" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1590950623554" />
-    <state width="1345" height="179" key="GridCell.Tab.0.center" timestamp="1590950623554">
+    <state width="1345" height="179" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1590955465006" />
+    <state width="1345" height="179" key="GridCell.Tab.0.center" timestamp="1590955465006">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1345" height="179" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1590950623554" />
-    <state width="1345" height="179" key="GridCell.Tab.0.left" timestamp="1590950623554">
+    <state width="1345" height="179" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1590955465006" />
+    <state width="1345" height="179" key="GridCell.Tab.0.left" timestamp="1590955465006">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1345" height="179" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1590950623554" />
-    <state width="1345" height="179" key="GridCell.Tab.0.right" timestamp="1590950623554">
+    <state width="1345" height="179" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1590955465006" />
+    <state width="1345" height="179" key="GridCell.Tab.0.right" timestamp="1590955465006">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1345" height="179" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1590950623554" />
+    <state width="1345" height="179" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1590955465006" />
     <state width="1345" height="223" key="GridCell.Tab.1.bottom" timestamp="1590948486821">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -260,17 +255,17 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/test_suites/interactive_test_runner.py</url>
-          <line>155</line>
+          <line>137</line>
           <option name="timeStamp" value="30" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/test_suites/interactive_test_runner.py</url>
-          <line>172</line>
+          <line>154</line>
           <option name="timeStamp" value="31" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/test_suites/interactive_test_runner.py</url>
-          <line>180</line>
+          <line>162</line>
           <option name="timeStamp" value="32" />
         </line-breakpoint>
       </breakpoints>

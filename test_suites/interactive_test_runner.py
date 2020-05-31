@@ -7,17 +7,6 @@ import threading
 import time
 import sys
 from appium.webdriver.appium_service import AppiumService
-
-sys.path.insert(0, "/path/to/your/package_or_module")
-sys.path.append("../abs_class")
-sys.path.append("../apks")
-sys.path.append("../app_window_objects")
-sys.path.append("../profiles")
-sys.path.append("../screenshots")
-sys.path.append("../selectors")
-sys.path.append("../utils")
-sys.path.append("../videoRecorder")
-sys.path.append("../videos")
 sys.path.append(str(pathlib.Path().absolute())+"/../videoRecorder/videoRecorder")
 sys.path.append(str(pathlib.Path().absolute())+"/../videoRecorder")
 
