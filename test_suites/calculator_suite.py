@@ -2,14 +2,13 @@ import time
 import unittest
 import selenium
 from app_window_objects import calculatormainapp as cmp
-from desktopBrowserRecorder import DesktopBrowserRecorder
-#from videoRecorder.videoRecorder.desktopBrowserRecorder import DesktopBrowserRecorder
+#from desktopBrowserRecorder import DesktopBrowserRecorder
+from videoRecorder.videoRecorder.desktopBrowserRecorder import DesktopBrowserRecorder
 
 class CalculatorTestSuite(unittest.TestCase):
 
     video_recorder = None
     driver = None
-
 
     def tearDown(self):
         if self.video_recorder is not None:
@@ -21,12 +20,12 @@ class CalculatorTestSuite(unittest.TestCase):
     def setUp(self) -> None:
         self.calculator = cmp.CalculatorMainApp()
         self.driver = self.calculator.driver
-        self.video_recorder = DesktopBrowserRecorder("..//videos", ".mp4", self.calculator.driver)
+        self.video_recorder = DesktopBrowserRecorder(".mp4", self.calculator.driver)
+        self.video_recorder.startRecordingSession()
 
     def test_add_two_numbers(self):
         n = input("Select first number\n")
         m = input("Select second number\n")
-        self.video_recorder.startRecordingSession()
         try:
             self.calculator.click_on_arrow()
         except selenium.common.exceptions.NoSuchElementException:
@@ -43,7 +42,6 @@ class CalculatorTestSuite(unittest.TestCase):
     def test_subtract_two_numbers(self):
         n = input("Select first number\n")
         m = input("Select second number\n")
-        self.video_recorder.startRecordingSession()
         try:
             self.calculator.click_on_arrow()
         except selenium.common.exceptions.NoSuchElementException:
@@ -60,7 +58,6 @@ class CalculatorTestSuite(unittest.TestCase):
     def test_multiply_two_numbers(self):
         n = input("Select first number\n")
         m = input("Select second number\n")
-        self.video_recorder.startRecordingSession()
         try:
             self.calculator.click_on_arrow()
         except selenium.common.exceptions.NoSuchElementException:
@@ -77,7 +74,6 @@ class CalculatorTestSuite(unittest.TestCase):
     def test_divide_two_numbers(self):
         n = input("Select first number\n")
         m = input("Select second number\n")
-        self.video_recorder.startRecordingSession()
         try:
             self.calculator.click_on_arrow()
         except selenium.common.exceptions.NoSuchElementException:
@@ -92,7 +88,6 @@ class CalculatorTestSuite(unittest.TestCase):
         self.assertEqual(int(n) / (int(m)), result)
 
     def test_delete_number(self):
-        self.video_recorder.startRecordingSession()
         try:
             self.calculator.click_on_arrow()
         except selenium.common.exceptions.NoSuchElementException:

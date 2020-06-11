@@ -22,15 +22,12 @@ class CalculatorTestSuite(unittest.TestCase):
     def setUp(self) -> None:
         self.calculator = cmp.CalculatorMainApp()
         self.driver = self.calculator.driver
-        if os.path.exists("..//videos"):
-            self.video_recorder = DesktopBrowserRecorder("..//videos", ".mp4", self.calculator.driver)
-        else:
-            self.video_recorder = DesktopBrowserRecorder(".//videos", ".mp4", self.calculator.driver)
+        self.video_recorder = DesktopBrowserRecorder(".mp4", self.calculator.driver)
+        self.video_recorder.startRecordingSession()
 
     def test_add_two_numbers(self):
         n: str = str(8)
         m: str = str(3)
-        self.video_recorder.startRecordingSession()
         try:
             self.calculator.click_on_arrow()
         except selenium.common.exceptions.NoSuchElementException:
@@ -47,7 +44,6 @@ class CalculatorTestSuite(unittest.TestCase):
     def test_subtract_two_numbers(self):
         n: str = str(8)
         m: str = str(3)
-        self.video_recorder.startRecordingSession()
         try:
             self.calculator.click_on_arrow()
         except selenium.common.exceptions.NoSuchElementException:
@@ -64,7 +60,6 @@ class CalculatorTestSuite(unittest.TestCase):
     def test_multiply_two_numbers(self):
         n: str = str(8)
         m: str = str(5)
-        self.video_recorder.startRecordingSession()
         try:
             self.calculator.click_on_arrow()
         except selenium.common.exceptions.NoSuchElementException:
@@ -81,7 +76,6 @@ class CalculatorTestSuite(unittest.TestCase):
     def test_divide_two_numbers(self):
         n: str = str(9)
         m: str = str(3)
-        self.video_recorder.startRecordingSession()
         try:
             self.calculator.click_on_arrow()
         except selenium.common.exceptions.NoSuchElementException:

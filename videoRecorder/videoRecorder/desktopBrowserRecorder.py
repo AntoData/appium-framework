@@ -52,7 +52,7 @@ class DesktopBrowserRecorder:
         we will store that __thread so we can start it or stop it and that way start or stop the recording
         session.
     """
-    def __init__(self,folder,encoding,driver = None):
+    def __init__(self,encoding,driver = None):
         """ 
         The constructor for DesktopBrowserRecorder class. 
   
@@ -64,7 +64,11 @@ class DesktopBrowserRecorder:
            by this webdriver
         """
         self.driver = driver
-        self.__folder = folder
+        folder = "..//videos"
+        if os.path.exists(folder):
+            self.__folder = folder
+        else:
+            self.__folder = ".//videos"
         self.__sessionPath = ""
         self.__encoding = encoding
         #To start __keeprecording will be False for starters
@@ -151,7 +155,17 @@ class DesktopBrowserRecorder:
         #will contain the videos resulting of our recording session
         now = datetime.now()
         #We build that path to contain the videos resulting from our recording session
-        self.__sessionPath = self.__folder + "\\"+now.strftime("%d-%m-%Y_%H-%M-%S")
+        platform: str = ""
+        if "platformName" in self.driver.capabilities.keys():
+            platform = self.driver.capabilities["platformName"]
+        device_name: str = ""
+        if "deviceName" in self.driver.capabilities.keys():
+            device_name = self.driver.capabilities["deviceName"]
+        app_activity: str = ""
+        if "appActivity" in self.driver.capabilities.keys():
+            app_activity = self.driver.capabilities["appActivity"]
+        self.__sessionPath = self.__folder + "\\"+now.strftime("%d-%m-%Y_%H-%M-%S") + \
+                             "_{0}_{1}_{2}".format(platform, device_name, app_activity)
         try:
             #We create that __folder
             os.mkdir(self.__sessionPath)

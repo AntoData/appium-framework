@@ -9,8 +9,8 @@ from app_window_objects.instagramloginapp import InstagramLoginApp
 from app_window_objects.instagrammainapp import InstagramMainApp
 from app_window_objects.instagramprofileapp import InstagramProfileApp
 from appium.webdriver import webelement
-from desktopBrowserRecorder import DesktopBrowserRecorder
-#from videoRecorder.videoRecorder.desktopBrowserRecorder import DesktopBrowserRecorder
+#from desktopBrowserRecorder import DesktopBrowserRecorder
+from videoRecorder.videoRecorder.desktopBrowserRecorder import DesktopBrowserRecorder
 
 class InstagramTestSuite(unittest.TestCase):
 
@@ -19,19 +19,24 @@ class InstagramTestSuite(unittest.TestCase):
     def tearDown(self):
         if self.video_recorder is not None:
             self.video_recorder.stopRecordingSession()
+        if self.driver is not None:
+            self.driver.quit()
+            time.sleep(60)
+
+    def setUp(self) -> None:
+        self.instagram = ins.InstagramLoginApp()
+        self.driver = self.calculator.driver
+        self.video_recorder = DesktopBrowserRecorder(".mp4", self.calculator.driver)
 
     def test_login(self, username: str = None) -> InstagramMainApp:
         if username is None:
             username = input("Give us your username: ")
         password = input("Give us your password: ")
-        instagram: InstagramLoginApp = ins.InstagramLoginApp()
-        self.video_recorder = DesktopBrowserRecorder("..//videos", ".mp4", instagram.driver)
-        self.video_recorder.startRecordingSession()
-        instagram.click_on_login()
-        instagram.set_username(username)
-        instagram.set_password(password)
+        self.instagram.click_on_login()
+        self.instagram.set_username(username)
+        self.instagram.set_password(password)
         time.sleep(5)
-        instagram_main: InstagramMainApp = instagram.click_on_button_to_login()
+        instagram_main: InstagramMainApp = self.instagram.click_on_button_to_login()
         self.assertTrue(instagram_main.is_title_bar_visible(), "We were not logged in")
         time.sleep(5)
         return instagram_main

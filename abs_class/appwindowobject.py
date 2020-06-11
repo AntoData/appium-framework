@@ -80,7 +80,7 @@ class AppWindowObject(ABC):
                 # In other case, we set a specific json profile file, so we use it
                 self.capabilities: dict = get_capabilities_from_file(profile_file)
             self.capabilities["bitbar_project"] = type(self).__name__.lower()
-            #If it is a remote test, we check if we provided an ID in bitbar_app (ids are decimal)
+            # If it is a remote test, we check if we provided an ID in bitbar_app (ids are decimal)
             if "bitbar_app" in self.capabilities.keys() and not self.capabilities["bitbar_app"].isdecimal():
                 # If we did not, we call the method upload_file_to_bitbar to upload the file in folder apk
                 # we set in variable bitbar_app, get the ID of that file uploaded to bitbar and set it as the
@@ -120,13 +120,21 @@ class AppWindowObject(ABC):
             # Now we build the path for this new folder that will contain the screenshots for this test
             # We get the current path, then go to folder screenshots and then we build the name of the new folder
             # as the current time and date we got earlier as string plus the name of the current class in lower case
+            platform: str = ""
+            if "platformName" in self.driver.capabilities.keys():
+                platform = self.driver.capabilities["platformName"]
+            device_name: str = ""
+            if "deviceName" in self.driver.capabilities.keys():
+                device_name = self.driver.capabilities["deviceName"]
             path: str = str(pathlib.Path().absolute()) + "\\..\\" + "\\screenshots\\"
             if os.path.exists(path):
                 initial_path: str = str(pathlib.Path().absolute()) + "\\..\\" + "\\screenshots\\" + \
-                                    current_timestamp + "_" + type(self).__name__.lower()
+                                    current_timestamp + "_" + type(self).__name__.lower() + \
+                                    "_{0}_{1}".format(platform, device_name)
             else:
                 initial_path: str = str(pathlib.Path().absolute()) + "\\screenshots\\" + \
-                                    current_timestamp + "_" + type(self).__name__.lower()
+                                    current_timestamp + "_" + type(self).__name__.lower()  + \
+                                    "_{0}_{1}".format(platform, device_name)
             # Now we create that folder
             os.mkdir(initial_path)
             # We save this path as a capability of our driver, so we can get it from our driver in the future
