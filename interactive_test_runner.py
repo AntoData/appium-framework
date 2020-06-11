@@ -118,7 +118,7 @@ def scheduler():
     # We create the configparser object
     config: configparser.ConfigParser = configparser.ConfigParser()
     # We build the path to the file .ini in folder selector
-    scheduler_path: str = str(pathlib.Path().absolute()) + "\\..\\" + "scheduled-tests.ini"
+    scheduler_path: str = str(pathlib.Path().absolute()) + "\\" + "scheduled-tests.ini"
     # We read the file scheduled-tests.ini that contains the variables to run our tests, one by one
     config.read(scheduler_path)
     # We go through every key in that file that represents each test we want to run
@@ -152,7 +152,7 @@ def scheduler():
                 # We create a file "../tmp/current_test_profile.txt" which will contain the name of the json profile
                 # file we want to use for our current test and that the abstract class in module appwindowobject.py
                 # will read to run the test in the right device with the right settings
-                file = open("../tmp/current_test_profile.txt", "+w")
+                file = open("./tmp/current_test_profile.txt", "+w")
                 # We write the name of the profile_file we set in scheduled-tests.ini in this temp file
                 file.write(current_test_parameters["profile_file"])
             except FileNotFoundError as e:

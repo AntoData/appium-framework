@@ -188,8 +188,12 @@ def get_capabilities_from_file(capability_profile: str) -> dict:
     try:
         # Inside a try/except block we read the file that turn it into a dictionary in the variable created to None
         # previously
-        with open(str(pathlib.Path().absolute()) + "\\..\\" + "\\profiles\\" + capability_profile, 'r') as f:
-            capabilities_dict = js.load(f)
+        if os.path.exists(str(pathlib.Path().absolute()) + "\\..\\" + "\\profiles\\" + capability_profile):
+            with open(str(pathlib.Path().absolute()) + "\\..\\" + "\\profiles\\" + capability_profile, 'r') as f:
+                capabilities_dict = js.load(f)
+        else:
+            with open(str(pathlib.Path().absolute()) + "\\profiles\\" + capability_profile, 'r') as f:
+                capabilities_dict = js.load(f)
     # We catch any exception that might happen
     except Exception as e:
         print("There was an error while getting capabilities from file {0}: {1}".format(capability_profile, e))

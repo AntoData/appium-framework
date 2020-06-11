@@ -2,8 +2,9 @@ import time
 import unittest
 import selenium
 from app_window_objects import calculatormainapp as cmp
-from desktopBrowserRecorder import DesktopBrowserRecorder
-#from videoRecorder.videoRecorder.desktopBrowserRecorder import DesktopBrowserRecorder
+#from desktopBrowserRecorder import DesktopBrowserRecorder
+from videoRecorder.videoRecorder.desktopBrowserRecorder import DesktopBrowserRecorder
+import os
 
 class CalculatorTestSuite(unittest.TestCase):
 
@@ -21,7 +22,10 @@ class CalculatorTestSuite(unittest.TestCase):
     def setUp(self) -> None:
         self.calculator = cmp.CalculatorMainApp()
         self.driver = self.calculator.driver
-        self.video_recorder = DesktopBrowserRecorder("..//videos", ".mp4", self.calculator.driver)
+        if os.path.exists("..//videos"):
+            self.video_recorder = DesktopBrowserRecorder("..//videos", ".mp4", self.calculator.driver)
+        else:
+            self.video_recorder = DesktopBrowserRecorder(".//videos", ".mp4", self.calculator.driver)
 
     def test_add_two_numbers(self):
         n: str = str(8)

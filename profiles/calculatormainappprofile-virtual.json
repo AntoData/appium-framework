@@ -5,4 +5,4 @@
   "appPackage": "com.google.android.calculator",
   "appActivity": "com.android.calculator2.Calculator",
   "adbExecTimeout": "200000",
-"apk_install" : "calculator_android.apk"}
+"apk_install" : "calculator_android_v78.apk"}

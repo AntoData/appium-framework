@@ -56,7 +56,10 @@ class AppWindowObject(ABC):
             file = None
             # We try to open the file where the json file is set
             try:
-                file = open("../tmp/current_test_profile.txt", "r")
+                if os.path.exists("../tmp/current_test_profile.txt"):
+                    file = open("../tmp/current_test_profile.txt", "r")
+                else:
+                    file = open("./tmp/current_test_profile.txt", "r")
                 # If it exists we read it, line by line
                 for line in file:
                     # We add the line to the variable profile_line
@@ -98,8 +101,14 @@ class AppWindowObject(ABC):
 
             # If we have this capability we have to install the apk in the device
             if "apk_install" in self.capabilities.keys():
-                self.capabilities["app"] = "../apks/{0}".format(self.capabilities["apk_install"])
+                app_path = str(pathlib.Path().absolute()) + "\\..\\apks\\{0}".format(self.capabilities["apk_install"])
+                if os.path.exists(app_path):
+                    self.capabilities["app"] = app_path
+                else:
+                    self.capabilities["app"] = str(pathlib.Path().absolute()) + \
+                                               "\\apks\\{0}".format(self.capabilities["apk_install"])
 
+            # We create the instance of the webdriver for our app
             self.driver: webdriver = webdriver.Remote(server, self.capabilities)
 
             # As this is the first activity of the test, we have to create the folder for the screenshots for this
@@ -111,8 +120,13 @@ class AppWindowObject(ABC):
             # Now we build the path for this new folder that will contain the screenshots for this test
             # We get the current path, then go to folder screenshots and then we build the name of the new folder
             # as the current time and date we got earlier as string plus the name of the current class in lower case
-            initial_path: str = str(pathlib.Path().absolute()) + "\\..\\" + "\\screenshots\\" + \
-                                current_timestamp + "_" + type(self).__name__.lower()
+            path: str = str(pathlib.Path().absolute()) + "\\..\\" + "\\screenshots\\"
+            if os.path.exists(path):
+                initial_path: str = str(pathlib.Path().absolute()) + "\\..\\" + "\\screenshots\\" + \
+                                    current_timestamp + "_" + type(self).__name__.lower()
+            else:
+                initial_path: str = str(pathlib.Path().absolute()) + "\\screenshots\\" + \
+                                    current_timestamp + "_" + type(self).__name__.lower()
             # Now we create that folder
             os.mkdir(initial_path)
             # We save this path as a capability of our driver, so we can get it from our driver in the future
@@ -140,7 +154,10 @@ class AppWindowObject(ABC):
         config: configparser.ConfigParser = configparser.ConfigParser()
         # We build the path to the file .ini in folder selector
         selector_path: str = str(pathlib.Path().absolute()) + "\\.." + "\\selectors\\" + selector + ".ini"
+        if not os.path.exists(selector_path):
+            selector_path: str = str(pathlib.Path().absolute()) + "\\selectors\\" + selector + ".ini"
         # We read that file
+        print(selector_path)
         config.read(selector_path)
         # We return the configparser object
         return config
@@ -156,7 +173,10 @@ class AppWindowObject(ABC):
         # We create an object of type configparser
         config: configparser.ConfigParser = configparser.ConfigParser()
         # We generate the path to the file config_paramters.ini in folder profiles
-        config_path: str = str(pathlib.Path().absolute()) + "\\.." + "\\profiles\\config_parameters.ini"
+        if os.path.exists(str(pathlib.Path().absolute()) + "\\.." + "\\profiles\\config_parameters.ini"):
+            config_path: str = str(pathlib.Path().absolute()) + "\\.." + "\\profiles\\config_parameters.ini"
+        else:
+            config_path: str = str(pathlib.Path().absolute()) + "\\profiles\\config_parameters.ini"
         # We read that file and parse its information
         config.read(config_path)
         # We return the url assigned to the parameter with name class_name in section SERVERS

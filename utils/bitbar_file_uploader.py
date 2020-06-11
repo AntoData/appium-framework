@@ -1,5 +1,6 @@
 import subprocess
 import re
+import os
 
 
 def upload_file_to_bitbar(file_apk: str) -> str:
@@ -10,8 +11,12 @@ def upload_file_to_bitbar(file_apk: str) -> str:
     :return: A string with the id of the file we uploaded to Bitbar
     """
     # We set up the command to upload the file in "file_apk" to bitbar, replacing {0} with file_apk
-    command: str = 'curl -X POST -u ONzNQdFzFsNyzwfwECg6XhXYEfuEJvTQ: https://cloud.bitbar.com/api/me/files -F ' \
-                   '"file=@../apks/{0}"'.format(file_apk)
+    if os.path.exists("../apks/{0}".format(file_apk)):
+        command: str = 'curl -X POST -u ONzNQdFzFsNyzwfwECg6XhXYEfuEJvTQ: https://cloud.bitbar.com/api/me/files -F ' \
+                       '"file=@../apks/{0}"'.format(file_apk)
+    else:
+        command: str = 'curl -X POST -u ONzNQdFzFsNyzwfwECg6XhXYEfuEJvTQ: https://cloud.bitbar.com/api/me/files -F ' \
+                       '"file=@./apks/{0}"'.format(file_apk)
     print("Executing command to upload apk file to BitBar:")
     print(command)
     # We execute the command
