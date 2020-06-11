@@ -4,6 +4,8 @@ import configparser
 import pathlib
 from datetime import datetime
 from appium import webdriver
+
+from utils.bitbar_file_uploader import upload_file_to_bitbar
 from utils.capabilities_utils import get_capabilities_from_file
 import utils.webdriver_find_utils as wu
 from utils.screenshot_utils import ScreenshotUtils
@@ -67,12 +69,6 @@ class AppWindowObject(ABC):
                 # However, we always try to close the file and remove it in case it exists
                 if file is not None:
                     file.close()
-                    try:
-                        # We try to remove the file
-                        os.remove("../tmp/current_test_profile.txt")
-                    except FileNotFoundError as e:
-                        # If the file can't be found, it means we don't need to delete it and we can go on
-                        print("tmp file not found: {0}".format(e))
             # If the variable profile_file is None or "", means that we didn't read which json profile file we have to
             # use, which means we run this probably from the test suite module, so we use the default file
             if profile_file is None or profile_file == "":
@@ -80,8 +76,32 @@ class AppWindowObject(ABC):
             else:
                 # In other case, we set a specific json profile file, so we use it
                 self.capabilities: dict = get_capabilities_from_file(profile_file)
+            self.capabilities["bitbar_project"] = type(self).__name__.lower()
+            #If it is a remote test, we check if we provided an ID in bitbar_app (ids are decimal)
+            if "bitbar_app" in self.capabilities.keys() and not self.capabilities["bitbar_app"].isdecimal():
+                # If we did not, we call the method upload_file_to_bitbar to upload the file in folder apk
+                # we set in variable bitbar_app, get the ID of that file uploaded to bitbar and set it as the
+                # new value of capability bitbar app, so we can execute our remote test
+                self.capabilities["bitbar_app"] = upload_file_to_bitbar(self.capabilities["bitbar_app"])
             # We create the webdriver instance using the capabilities we got from the json file
-            self.driver: webdriver = webdriver.Remote(self.get_server(type(self).__name__.lower()), self.capabilities)
+            # If our capabilities have the key "bitbar_key", it means we are running a remote test
+            if "bitbar_apiKey" in self.capabilities.keys():
+                print("Remote test")
+                # So we get the server we set up in the folder profiles in file config_parameters.ini for
+                # variable remote in section SERVERS
+                server: str = self.get_server("remote")
+            else:
+                # Otherwise, we are running a local test and we have to give variable server the value of the
+                # parameter local in section SERVERS
+                print("Local test")
+                server: str = self.get_server("local")
+
+            # If we have this capability we have to install the apk in the device
+            if "apk_install" in self.capabilities.keys():
+                self.capabilities["app"] = "../apks/{0}".format(self.capabilities["apk_install"])
+
+            self.driver: webdriver = webdriver.Remote(server, self.capabilities)
+
             # As this is the first activity of the test, we have to create the folder for the screenshots for this
             # test in the folder screenshots
             # In order to do so, we first get the current date and time

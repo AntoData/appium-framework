@@ -8,16 +8,24 @@ from desktopBrowserRecorder import DesktopBrowserRecorder
 class CalculatorTestSuite(unittest.TestCase):
 
     video_recorder = None
+    driver = None
+
 
     def tearDown(self):
         if self.video_recorder is not None:
             self.video_recorder.stopRecordingSession()
+        if self.driver is not None:
+            self.driver.quit()
+            time.sleep(60)
+
+    def setUp(self) -> None:
+        self.calculator = cmp.CalculatorMainApp()
+        self.driver = self.calculator.driver
+        self.video_recorder = DesktopBrowserRecorder("..//videos", ".mp4", self.calculator.driver)
 
     def test_add_two_numbers(self):
         n = input("Select first number\n")
         m = input("Select second number\n")
-        self.calculator = cmp.CalculatorMainApp()
-        self.video_recorder = DesktopBrowserRecorder("..//videos", ".mp4", self.calculator.driver)
         self.video_recorder.startRecordingSession()
         try:
             self.calculator.click_on_arrow()
@@ -35,8 +43,6 @@ class CalculatorTestSuite(unittest.TestCase):
     def test_subtract_two_numbers(self):
         n = input("Select first number\n")
         m = input("Select second number\n")
-        self.calculator = cmp.CalculatorMainApp()
-        self.video_recorder = DesktopBrowserRecorder("..//videos", ".mp4", self.calculator.driver)
         self.video_recorder.startRecordingSession()
         try:
             self.calculator.click_on_arrow()
@@ -54,8 +60,6 @@ class CalculatorTestSuite(unittest.TestCase):
     def test_multiply_two_numbers(self):
         n = input("Select first number\n")
         m = input("Select second number\n")
-        self.calculator = cmp.CalculatorMainApp()
-        self.video_recorder = DesktopBrowserRecorder("..//videos", ".mp4", self.calculator.driver)
         self.video_recorder.startRecordingSession()
         try:
             self.calculator.click_on_arrow()
@@ -73,8 +77,6 @@ class CalculatorTestSuite(unittest.TestCase):
     def test_divide_two_numbers(self):
         n = input("Select first number\n")
         m = input("Select second number\n")
-        self.calculator = cmp.CalculatorMainApp()
-        self.video_recorder = DesktopBrowserRecorder("..//videos", ".mp4", self.calculator.driver)
         self.video_recorder.startRecordingSession()
         try:
             self.calculator.click_on_arrow()
@@ -90,8 +92,6 @@ class CalculatorTestSuite(unittest.TestCase):
         self.assertEqual(int(n) / (int(m)), result)
 
     def test_delete_number(self):
-        self.calculator = cmp.CalculatorMainApp()
-        self.video_recorder = DesktopBrowserRecorder("..//videos", ".mp4", self.calculator.driver)
         self.video_recorder.startRecordingSession()
         try:
             self.calculator.click_on_arrow()

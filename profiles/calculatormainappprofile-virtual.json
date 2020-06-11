@@ -1,0 +1,8 @@
+{"platformName": "Android",
+  "platformVersion": "9",
+  "deviceName": " generic_x86_arm",
+  "automationName": "UiAutomator2",
+  "appPackage": "com.google.android.calculator",
+  "appActivity": "com.android.calculator2.Calculator",
+  "adbExecTimeout": "200000",
+"apk_install" : "calculator_android.apk"}

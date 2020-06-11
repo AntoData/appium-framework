@@ -2,7 +2,19 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0b508150-1ee4-49ce-97a7-0fa5d8d3c4aa" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/apks/calculator_android_v78.apk" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/profiles/calculatormainappprofile-real.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/abs_class/appwindowobject.py" beforeDir="false" afterPath="$PROJECT_DIR$/abs_class/appwindowobject.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apks/com.instagram.android_142.0.0.34.110-215464381_minAPI19(armeabi-v7a)(nodpi)_apkmirror.com.apk" beforeDir="false" afterPath="$PROJECT_DIR$/apks/com.instagram.android.apk" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/profiles/calculatormainappprofile.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/profiles/config_parameters.ini" beforeDir="false" afterPath="$PROJECT_DIR$/profiles/config_parameters.ini" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/profiles/instagramloginappprofile-b.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/profiles/instagramloginappprofile-c.json" beforeDir="false" afterPath="$PROJECT_DIR$/profiles/instagramloginappprofile-real.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/profiles/instagramloginappprofile-d.json" beforeDir="false" afterPath="$PROJECT_DIR$/profiles/instagramloginappprofile-virtual.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/profiles/instagramloginappprofile.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/scheduled-tests.ini" beforeDir="false" afterPath="$PROJECT_DIR$/scheduled-tests.ini" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test_suites/calculator_suite.py" beforeDir="false" afterPath="$PROJECT_DIR$/test_suites/calculator_suite.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/test_suites/interactive_test_runner.py" beforeDir="false" afterPath="$PROJECT_DIR$/test_suites/interactive_test_runner.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -29,21 +41,24 @@
   </component>
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/profiles" />
     <property name="settings.editor.selected.configurable" value="vcs.Git" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\ingov\PycharmProjects\appium-framework\tmp" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\ingov\PycharmProjects\appium-framework" />
+      <recent name="C:\Users\ingov\PycharmProjects\appium-framework\profiles" />
       <recent name="C:\Users\ingov\PycharmProjects\appium-framework\test_suites" />
+      <recent name="C:\Users\ingov\PycharmProjects\appium-framework" />
       <recent name="C:\Users\ingov\PycharmProjects\appium-framework\venv\Lib\site-packages" />
     </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\ingov\PycharmProjects\appium-framework\apks" />
+      <recent name="C:\Users\ingov\PycharmProjects\appium-framework\utils" />
+      <recent name="C:\Users\ingov\PycharmProjects\appium-framework\tmp" />
+    </key>
   </component>
-  <component name="RunManager" selected="Python.interactive_test_runner (1)">
-    <configuration name="interactive_test_runner (1)" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="Python.interactive_test_runner">
+    <configuration name="bitbar_file_uploader" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="appium-framework" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -51,11 +66,32 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/test_suites" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/apks" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/test_suites/interactive_test_runner.py" />
+      <option name="SCRIPT_NAME" value="C:\Users\ingov\PycharmProjects\appium-framework\utils\bitbar_file_uploader.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="calculatormainapp" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="appium-framework" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/app_window_objects" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/app_window_objects/calculatormainapp.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -72,11 +108,11 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/test_suites" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/interactive_test_runner.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/test_suites/interactive_test_runner.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -106,7 +142,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="Unittests for instagram_suite.InstagramTestSuite" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
+    <configuration name="Unittests in calculator_suite.py" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
       <module name="appium-framework" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -116,31 +152,17 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;instagram_suite.InstagramTestSuite&quot;" />
-      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
-      <method v="2" />
-    </configuration>
-    <configuration name="Unittests in instagram_suite.py" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
-      <module name="appium-framework" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/test_suites" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;$PROJECT_DIR$/test_suites/instagram_suite.py&quot;" />
+      <option name="_new_target" value="&quot;$PROJECT_DIR$/test_suites/calculator_suite.py&quot;" />
       <option name="_new_targetType" value="&quot;PATH&quot;" />
       <method v="2" />
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.interactive_test_runner (1)" />
         <item itemvalue="Python.interactive_test_runner" />
-        <item itemvalue="Python tests.Unittests in instagram_suite.py" />
         <item itemvalue="Python.script_capabilities" />
-        <item itemvalue="Python tests.Unittests for instagram_suite.InstagramTestSuite" />
+        <item itemvalue="Python tests.Unittests in calculator_suite.py" />
+        <item itemvalue="Python.calculatormainapp" />
+        <item itemvalue="Python.bitbar_file_uploader" />
       </list>
     </recent_temporary>
   </component>
@@ -170,107 +192,135 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="413" y="114" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1366.728@0.0.1366.728" timestamp="1590926397019" />
-    <state width="1345" height="179" key="GridCell.Tab.0.bottom" timestamp="1590955465006">
+    <state x="0" y="117" key="#xdebugger.XInspectDialog" timestamp="1591648786613">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1345" height="179" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1590955465006" />
-    <state width="1345" height="179" key="GridCell.Tab.0.center" timestamp="1590955465006">
+    <state x="0" y="117" key="#xdebugger.XInspectDialog/0.0.1366.728@0.0.1366.728" timestamp="1591648786613" />
+    <state x="463" y="109" key="FileChooserDialogImpl" timestamp="1591824352942">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1345" height="179" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1590955465006" />
-    <state width="1345" height="179" key="GridCell.Tab.0.left" timestamp="1590955465006">
+    <state x="463" y="109" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1591824352942" />
+    <state width="1345" height="178" key="GridCell.Tab.0.bottom" timestamp="1591900634256">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1345" height="179" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1590955465006" />
-    <state width="1345" height="179" key="GridCell.Tab.0.right" timestamp="1590955465006">
+    <state width="1345" height="178" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1591900634256" />
+    <state width="1345" height="178" key="GridCell.Tab.0.center" timestamp="1591900634256">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1345" height="179" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1590955465006" />
-    <state width="1345" height="223" key="GridCell.Tab.1.bottom" timestamp="1590948486821">
+    <state width="1345" height="178" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1591900634256" />
+    <state width="1345" height="178" key="GridCell.Tab.0.left" timestamp="1591900634256">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1345" height="223" key="GridCell.Tab.1.bottom/0.0.1366.728@0.0.1366.728" timestamp="1590948486821" />
-    <state width="1345" height="223" key="GridCell.Tab.1.center" timestamp="1590948486821">
+    <state width="1345" height="178" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1591900634256" />
+    <state width="1345" height="178" key="GridCell.Tab.0.right" timestamp="1591900634256">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1345" height="223" key="GridCell.Tab.1.center/0.0.1366.728@0.0.1366.728" timestamp="1590948486821" />
-    <state width="1345" height="223" key="GridCell.Tab.1.left" timestamp="1590948486821">
+    <state width="1345" height="178" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1591900634256" />
+    <state width="1345" height="237" key="GridCell.Tab.1.bottom" timestamp="1591894385115">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1345" height="223" key="GridCell.Tab.1.left/0.0.1366.728@0.0.1366.728" timestamp="1590948486821" />
-    <state width="1345" height="223" key="GridCell.Tab.1.right" timestamp="1590948486821">
+    <state width="1345" height="237" key="GridCell.Tab.1.bottom/0.0.1366.728@0.0.1366.728" timestamp="1591894385115" />
+    <state width="1345" height="237" key="GridCell.Tab.1.center" timestamp="1591894385115">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1345" height="223" key="GridCell.Tab.1.right/0.0.1366.728@0.0.1366.728" timestamp="1590948486821" />
+    <state width="1345" height="237" key="GridCell.Tab.1.center/0.0.1366.728@0.0.1366.728" timestamp="1591894385115" />
+    <state width="1345" height="237" key="GridCell.Tab.1.left" timestamp="1591894385115">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1345" height="237" key="GridCell.Tab.1.left/0.0.1366.728@0.0.1366.728" timestamp="1591894385115" />
+    <state width="1345" height="237" key="GridCell.Tab.1.right" timestamp="1591894385115">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1345" height="237" key="GridCell.Tab.1.right/0.0.1366.728@0.0.1366.728" timestamp="1591894385115" />
     <state x="186" y="9" key="SettingsEditor" timestamp="1589836853400">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="186" y="9" key="SettingsEditor/0.0.1366.728@0.0.1366.728" timestamp="1589836853400" />
-    <state x="391" y="191" key="com.intellij.ide.util.TipDialog" timestamp="1590844913068">
+    <state width="691" height="372" key="XDebugger.FullValuePopup" timestamp="1591648862650">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="391" y="191" key="com.intellij.ide.util.TipDialog/0.0.1366.728@0.0.1366.728" timestamp="1590844913068" />
+    <state width="691" height="372" key="XDebugger.FullValuePopup/0.0.1366.728@0.0.1366.728" timestamp="1591648862650" />
+    <state x="391" y="191" width="583" height="334" key="com.intellij.ide.util.TipDialog" timestamp="1591857506803">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="391" y="191" width="583" height="334" key="com.intellij.ide.util.TipDialog/0.0.1366.728@0.0.1366.728" timestamp="1591857506803" />
+    <state x="245" y="103" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2" timestamp="1591874362490">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="245" y="103" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2/0.0.1366.728@0.0.1366.728" timestamp="1591874362490" />
     <state x="346" y="49" width="672" height="678" key="search.everywhere.popup" timestamp="1590861588059">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="346" y="49" width="672" height="678" key="search.everywhere.popup/0.0.1366.728@0.0.1366.728" timestamp="1590861588059" />
+    <state x="405" y="282" key="vcs.readOnlyHandler.ReadOnlyStatusDialog" timestamp="1591891743693">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="405" y="282" key="vcs.readOnlyHandler.ReadOnlyStatusDialog/0.0.1366.728@0.0.1366.728" timestamp="1591891743693" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/test_suites/instagram_suite.py</url>
+          <url>file://$PROJECT_DIR$/test_suites/interactive_test_runner.py</url>
+          <line>175</line>
+          <option name="timeStamp" value="53" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/abs_class/appwindowobject.py</url>
+          <line>87</line>
+          <option name="timeStamp" value="57" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/test_suites/interactive_test_runner.py</url>
+          <line>115</line>
+          <option name="timeStamp" value="58" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/test_suites/calculator_suite_auto.py</url>
+          <line>13</line>
+          <option name="timeStamp" value="59" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/test_suites/calculator_suite_auto.py</url>
+          <line>25</line>
+          <option name="timeStamp" value="60" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/test_suites/calculator_suite_auto.py</url>
+          <line>42</line>
+          <option name="timeStamp" value="61" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/test_suites/calculator_suite_auto.py</url>
           <line>59</line>
-          <option name="timeStamp" value="2" />
+          <option name="timeStamp" value="62" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/utils/capabilities_utils.py</url>
-          <line>81</line>
-          <option name="timeStamp" value="5" />
+          <url>file://$PROJECT_DIR$/test_suites/calculator_suite_auto.py</url>
+          <line>76</line>
+          <option name="timeStamp" value="63" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/utils/capabilities_utils.py</url>
-          <line>74</line>
-          <option name="timeStamp" value="6" />
+          <url>file://$PROJECT_DIR$/test_suites/calculator_suite_auto.py</url>
+          <line>93</line>
+          <option name="timeStamp" value="64" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/utils/capabilities_utils.py</url>
-          <line>159</line>
-          <option name="timeStamp" value="8" />
+          <url>file://$PROJECT_DIR$/test_suites/calculator_suite_auto.py</url>
+          <option name="timeStamp" value="65" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/abs_class/appwindowobject.py</url>
-          <line>78</line>
-          <option name="timeStamp" value="9" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/test_suites/instagram_suite.py</url>
-          <line>84</line>
-          <option name="timeStamp" value="14" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/abs_class/appwindowobject.py</url>
-          <line>55</line>
-          <option name="timeStamp" value="28" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/test_suites/interactive_test_runner.py</url>
-          <line>137</line>
-          <option name="timeStamp" value="30" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/test_suites/interactive_test_runner.py</url>
-          <line>154</line>
-          <option name="timeStamp" value="31" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/test_suites/interactive_test_runner.py</url>
-          <line>162</line>
-          <option name="timeStamp" value="32" />
+          <url>file://$PROJECT_DIR$/test_suites/calculator_suite_auto.py</url>
+          <line>20</line>
+          <option name="timeStamp" value="66" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
     <watches-manager>
+      <configuration name="tests">
+        <watch expression="profile_file" />
+        <watch expression="self.driver.name" />
+      </configuration>
       <configuration name="PythonConfigurationType">
         <watch expression="config" />
         <watch expression="file.buffer" />

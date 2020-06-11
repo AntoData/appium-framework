@@ -6,6 +6,8 @@ import pathlib
 import threading
 import time
 import sys
+from psutil import process_iter
+from signal import SIGTERM  # or SIGKILL
 from appium.webdriver.appium_service import AppiumService
 sys.path.append(str(pathlib.Path().absolute())+"/../videoRecorder/videoRecorder")
 sys.path.append(str(pathlib.Path().absolute())+"/../videoRecorder")
@@ -14,7 +16,7 @@ sys.path.append(str(pathlib.Path().absolute())+"/../videoRecorder")
 This module is the one we use when we want to run several test suites in different devices. We only have to run this
 module completely and set the file "scheduled-tests.ini" in the main folder. We set the test in that file as follows:
 [Test 1]
-profile_file = <Profile JSON file in folder profiles we want to use for this test, ex: "instagramloginappprofile.json">
+profile_file = <Profile JSON file in folder profiles we want to use for our test, ex: "instagramloginappprofile-g.json">
 test_suite_file = <Test suite module in folder test_suites, for ex: "instagram_suite">
 device = <real (USB connected mobile device) or installed virtual device for ex: Pixel_2_API_28>
 
@@ -32,6 +34,12 @@ def start_appium_server_cmd_line() -> None:
     This method just starts the appium server using the global variable
     :return: None
     """
+    # We kill any process that is listening in port 4723
+    for proc in process_iter():
+        for conns in proc.connections(kind='inet'):
+            if conns.laddr.port == 4723:
+                proc.send_signal(SIGTERM)
+    # We execute the command appium to start the server
     os.system("appium")
 
 
@@ -104,13 +112,9 @@ def scheduler():
     different variables to set our environment to run our tests one after the other
     :return: None
     """
-    appium_server = threading.Thread(target=start_appium_server_cmd_line, args=())
-    appium_server.start()
-    # We start the appium server
-    start_appium_service_cmd_line()
-    # We start adb server in a new thread
-    adb_server = threading.Thread(target=adb_start_server, args=())
-    adb_server.start()
+    # We create this variables to control threads for starting and stopping appium and adb servers
+    appium_server = None
+    adb_server = None
     # We create the configparser object
     config: configparser.ConfigParser = configparser.ConfigParser()
     # We build the path to the file .ini in folder selector
@@ -123,8 +127,17 @@ def scheduler():
         if key != "DEFAULT":
             # We get the variables for our current test
             current_test_parameters = config[key]
+            # If the parameter "device" is not "remote", it means we have to start the adb service, appium server...
+            if current_test_parameters["device"] != "remote":
+                appium_server = threading.Thread(target=start_appium_server_cmd_line, args=())
+                appium_server.start()
+                # We start the appium server
+                start_appium_service_cmd_line()
+                # We start adb server in a new thread
+                adb_server = threading.Thread(target=adb_start_server, args=())
+                adb_server.start()
             # If the parameter "device" is not "real", it means we have to start a virtual device
-            if current_test_parameters["device"] != "real":
+            if current_test_parameters["device"] != "real" and current_test_parameters["device"] != "remote":
                 # We start the process to start a virtual device in a new thread
                 virtual_device = threading.Thread(target=start_virtual_device,
                                                   args=(current_test_parameters["device"],))
@@ -163,8 +176,21 @@ def scheduler():
             unittest.TextTestRunner().run(suite)
             # Once we run that suite, if this was run in a virtual device we stop that virtual device as it will be no
             # longer needed and will be wasting memory and affecting our performance
-            if current_test_parameters["device"] != "real":
+            if current_test_parameters["device"] != "real" and current_test_parameters["device"] != "remote":
                 stop_virtual_device()
+            # After running our test suite, if our device was not remote we have to stop appium and adb
+            if current_test_parameters["device"] != "remote":
+                # If appium_server was created
+                if appium_server is not None:
+                    # We stop the thread
+                    #appium_server.join()
+                    pass
+                # We stop the appium server
+                stop_appium_service_cmd_line()
+                # We stop adb server if it was created, stopping its thread
+                if adb_server is not None:
+                    adb_server.join()
+
 
 if __name__ == '__main__':
     try:
