@@ -9,12 +9,17 @@ page object class (classes in folder app_window_objects) in lower case.
 
 
 def main():
-    print("Unlock the phone")
-    print("Open the app you want to automate")
-    profile = input("Please provide a name for this profile to be saved:\n")
-    to_file_capabilities(profile)
-    print("By default the property 'automationName' will be set to 'UiAutomator1'")
-    print("If you see in Appium logs that the test does not run the app, try changing to 'UiAutomator2'")
+    try:
+        print("Unlock the phone")
+        print("Open the app you want to automate")
+        profile = input("Please provide a name for this profile to be saved:\n")
+        to_file_capabilities(profile)
+        print("By default the property 'automationName' will be set to 'UiAutomator1'")
+        print("If you see in Appium logs that the test does not run the app, try changing to 'UiAutomator2'")
+    except (FileNotFoundError, Exception):
+        print("An error was caught, maybe your app needs other commands to get the activity and package, try with:")
+        print("adb shell \"dumpsys window windows | grep -E \'Window\'\"")
+        print("adb shell \"dumpsys package | grep <your app>\"")
 
 
 if __name__ == '__main__':

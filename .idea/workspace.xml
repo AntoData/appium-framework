@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0b508150-1ee4-49ce-97a7-0fa5d8d3c4aa" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/app_window_objects/calculatormainapp.py" beforeDir="false" afterPath="$PROJECT_DIR$/app_window_objects/calculatormainapp.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/utils/webdriver_find_utils.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils/webdriver_find_utils.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/utils/script_capabilities.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils/script_capabilities.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
