@@ -6,9 +6,14 @@ import pathlib
 import threading
 import time
 import sys
+from datetime import datetime
+
 from psutil import process_iter
 from signal import SIGTERM  # or SIGKILL
 from appium.webdriver.appium_service import AppiumService
+
+from utils.report_utils import ReportUtils
+
 sys.path.append(str(pathlib.Path().absolute())+"/../videoRecorder/videoRecorder")
 sys.path.append(str(pathlib.Path().absolute())+"/../videoRecorder")
 
@@ -112,6 +117,8 @@ def scheduler():
     different variables to set our environment to run our tests one after the other
     :return: None
     """
+    # We create the file to store the report for the results of the test suites we are going to execute
+    report_file = ReportUtils()
     # We create this variables to control threads for starting and stopping appium and adb servers
     appium_server = None
     adb_server = None
@@ -173,7 +180,31 @@ def scheduler():
                 # else, just load all the test cases from the module.
                 suite.addTest(unittest.defaultTestLoader.loadTestsFromName("test_suites." +
                                                                            current_test_parameters["test_suite_file"]))
-            unittest.TextTestRunner().run(suite)
+            # We get the current instant to know when we started executing our suite
+            now = datetime.now()
+            # We build the first line for this suite stating when we started running it
+            first_line: str = "We started executing this test suite at {0}:\n".format(now.strftime("%d-%m-%Y_%H-%M-%S"))
+            second_line: str = "Tests to perform: \n"
+            # We write in the report file the information about the test suite before running
+            report_file.write_line_in_file(first_line)
+            report_file.write_line_in_file(second_line)
+            report_file.write_line_in_file(report_file.get_tests_from_suite(suite))
+            # We run the test suite
+            results = unittest.TextTestRunner().run(suite)
+            # We get the number of tests run
+            runs = results.testsRun
+            # We get the errors during the execution of the test suite
+            errors = results.errors
+            # We get the time when our test suite stopped
+            now_end = datetime.now()
+            end_time_str = now_end.strftime("%d-%m-%Y_%H-%M-%S")
+            # We build the lines for and write them to the report
+            report_test_numbers: str = "We run {0} tests\n".format(runs)
+            report_file.write_line_in_file(report_test_numbers)
+            report_finished: str = "The execution finished at {0}\n".format(end_time_str)
+            report_file.write_line_in_file(report_finished)
+            report_failed: str = "The following failed {0}\n".format(errors)
+            report_file.write_line_in_file(report_failed)
             # Once we run that suite, if this was run in a virtual device we stop that virtual device as it will be no
             # longer needed and will be wasting memory and affecting our performance
             if current_test_parameters["device"] != "real" and current_test_parameters["device"] != "remote":
@@ -190,6 +221,7 @@ def scheduler():
                 # We stop adb server if it was created, stopping its thread
                 if adb_server is not None:
                     adb_server.join()
+    report_file.close_file()
 
 
 if __name__ == '__main__':

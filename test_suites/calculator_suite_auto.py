@@ -89,7 +89,6 @@ class CalculatorTestSuite(unittest.TestCase):
         self.assertEqual(int(n) / (int(m)), result)
 
     def test_delete_number(self):
-        self.video_recorder.start_recording_session()
         try:
             self.calculator.click_on_arrow()
         except selenium.common.exceptions.NoSuchElementException:
