@@ -13,6 +13,7 @@ class WebDriverFindUtils:
     """
     This class provides methods that will be used in the property locators in the classes for our page objects
     for finding webelements using implicit waits (we wait until the elements is displayed or the time runs out)
+    Also, we provided a feature to take screenshots that will be saved in the session folder
 
     """
     def __init__(self, driver: webdriver):
@@ -265,3 +266,10 @@ class WebDriverFindUtils:
         self.__screenshot_utils.take_screenshot()
         elements: [webelement] = self.driver.find_elements_xpath(xpath)
         return elements
+
+    def take_screenshot(self):
+        """
+        This method allows as to take a screenshot that will be saved in the folder of our current session
+        :return: None
+        """
+        self.__screenshot_utils.take_screenshot()

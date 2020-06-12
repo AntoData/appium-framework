@@ -45,6 +45,7 @@ class CalculatorMainApp(AppWindowObject):
         # that for the number in parameter number
         id_number: str = self.id[self.number_button].replace("{n}", number)
         self.locators.find_element_by_id(id_number).click()
+        self.locators.take_screenshot()
 
     def click_on_add(self) -> None:
         """
