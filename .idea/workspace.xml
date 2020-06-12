@@ -3,10 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="0b508150-1ee4-49ce-97a7-0fa5d8d3c4aa" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/interactive_test_runner.py" beforeDir="false" afterPath="$PROJECT_DIR$/interactive_test_runner.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scheduled-tests.ini" beforeDir="false" afterPath="$PROJECT_DIR$/scheduled-tests.ini" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test_suites/calculator_suite_auto.py" beforeDir="false" afterPath="$PROJECT_DIR$/test_suites/calculator_suite_auto.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tmp/current_test_profile.txt" beforeDir="false" afterPath="$PROJECT_DIR$/tmp/current_test_profile.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/utils/capabilities_utils.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils/capabilities_utils.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -32,13 +29,13 @@
   </component>
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/profiles" />
     <property name="settings.editor.selected.configurable" value="vcs.Git" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\ingov\PycharmProjects\appium-framework" />
       <recent name="C:\Users\ingov\PycharmProjects\appium-framework\profiles" />
+      <recent name="C:\Users\ingov\PycharmProjects\appium-framework" />
       <recent name="C:\Users\ingov\PycharmProjects\appium-framework\test_suites" />
       <recent name="C:\Users\ingov\PycharmProjects\appium-framework\venv\Lib\site-packages" />
     </key>
@@ -50,7 +47,7 @@
       <recent name="C:\Users\ingov\PycharmProjects\appium-framework\tmp" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.interactive_test_runner (1)">
+  <component name="RunManager" selected="Python.script_capabilities">
     <configuration name="calculatormainapp" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="appium-framework" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -151,9 +148,9 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.script_capabilities" />
         <item itemvalue="Python.interactive_test_runner (1)" />
         <item itemvalue="Python.interactive_test_runner" />
-        <item itemvalue="Python.script_capabilities" />
         <item itemvalue="Python tests.Unittests in calculator_suite.py" />
         <item itemvalue="Python.calculatormainapp" />
       </list>
@@ -193,38 +190,38 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="463" y="109" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1591824352942" />
-    <state width="1345" height="178" key="GridCell.Tab.0.bottom" timestamp="1591969201323">
+    <state width="1345" height="237" key="GridCell.Tab.0.bottom" timestamp="1591993719473">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1345" height="178" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1591969201323" />
-    <state width="1345" height="178" key="GridCell.Tab.0.center" timestamp="1591969201323">
+    <state width="1345" height="237" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1591993719473" />
+    <state width="1345" height="237" key="GridCell.Tab.0.center" timestamp="1591993719472">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1345" height="178" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1591969201323" />
-    <state width="1345" height="178" key="GridCell.Tab.0.left" timestamp="1591969201322">
+    <state width="1345" height="237" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1591993719472" />
+    <state width="1345" height="237" key="GridCell.Tab.0.left" timestamp="1591993719472">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1345" height="178" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1591969201322" />
-    <state width="1345" height="178" key="GridCell.Tab.0.right" timestamp="1591969201323">
+    <state width="1345" height="237" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1591993719472" />
+    <state width="1345" height="237" key="GridCell.Tab.0.right" timestamp="1591993719472">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1345" height="178" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1591969201323" />
-    <state width="1345" height="237" key="GridCell.Tab.1.bottom" timestamp="1591968226681">
+    <state width="1345" height="237" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1591993719472" />
+    <state width="1345" height="237" key="GridCell.Tab.1.bottom" timestamp="1591993725060">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1345" height="237" key="GridCell.Tab.1.bottom/0.0.1366.728@0.0.1366.728" timestamp="1591968226681" />
-    <state width="1345" height="237" key="GridCell.Tab.1.center" timestamp="1591968226680">
+    <state width="1345" height="237" key="GridCell.Tab.1.bottom/0.0.1366.728@0.0.1366.728" timestamp="1591993725060" />
+    <state width="1345" height="237" key="GridCell.Tab.1.center" timestamp="1591993725059">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1345" height="237" key="GridCell.Tab.1.center/0.0.1366.728@0.0.1366.728" timestamp="1591968226680" />
-    <state width="1345" height="237" key="GridCell.Tab.1.left" timestamp="1591968226680">
+    <state width="1345" height="237" key="GridCell.Tab.1.center/0.0.1366.728@0.0.1366.728" timestamp="1591993725059" />
+    <state width="1345" height="237" key="GridCell.Tab.1.left" timestamp="1591993725059">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1345" height="237" key="GridCell.Tab.1.left/0.0.1366.728@0.0.1366.728" timestamp="1591968226680" />
-    <state width="1345" height="237" key="GridCell.Tab.1.right" timestamp="1591968226680">
+    <state width="1345" height="237" key="GridCell.Tab.1.left/0.0.1366.728@0.0.1366.728" timestamp="1591993725059" />
+    <state width="1345" height="237" key="GridCell.Tab.1.right" timestamp="1591993725059">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1345" height="237" key="GridCell.Tab.1.right/0.0.1366.728@0.0.1366.728" timestamp="1591968226680" />
+    <state width="1345" height="237" key="GridCell.Tab.1.right/0.0.1366.728@0.0.1366.728" timestamp="1591993725059" />
     <state x="186" y="9" key="SettingsEditor" timestamp="1589836853400">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -262,6 +259,11 @@
           <url>file://$PROJECT_DIR$/utils/report_utils.py</url>
           <line>10</line>
           <option name="timeStamp" value="76" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/utils/capabilities_utils.py</url>
+          <line>74</line>
+          <option name="timeStamp" value="77" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

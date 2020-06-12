@@ -74,7 +74,7 @@ def get_apppackage_appactivity() -> dict:
     # We use the method get_current_app_properties described above to get all the properties for our current app
     st_properties: [str] = str(get_current_app_properties())
     # We perform several transformation in that variable to get the properties in the right format
-    st_properties = re.search("[a-zA-Z.0-9]+/[a-zA-Z.0-9]+",st_properties)
+    st_properties = re.search("[a-zA-Z.0-9]+/[a-zA-Z.0-9]+", st_properties)
     package_activity = st_properties.group(0)
     # We split the different properties that are part of that property we selected previously
     package_activity = package_activity.split("/")
@@ -104,8 +104,8 @@ def get_device_properties() -> dict:
         dict_device_properties["platformName"] = v_so[0]
         dict_device_properties["platformVersion"] = v_so[1]
     elif "ro.build.version.release" in dict_properties.keys():
-        dict_device_properties["platformName"] = dict_properties["gsm.operator.alpha"].replace(" ","")
-        dict_device_properties["platformVersion"] = dict_properties["ro.build.version.release"].replace(" ","")
+        dict_device_properties["platformName"] = dict_properties["gsm.operator.alpha"].replace(" ", "")
+        dict_device_properties["platformVersion"] = dict_properties["ro.build.version.release"].replace(" ", "")
     dict_device_properties["deviceName"] = dict_properties["ro.product.device"]
     # We return that dictionary
     return dict_device_properties
