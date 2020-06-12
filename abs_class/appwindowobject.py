@@ -133,7 +133,7 @@ class AppWindowObject(ABC):
                                     "_{0}_{1}".format(platform, device_name)
             else:
                 initial_path: str = str(pathlib.Path().absolute()) + "\\screenshots\\" + \
-                                    current_timestamp + "_" + type(self).__name__.lower()  + \
+                                    current_timestamp + "_" + type(self).__name__.lower() + \
                                     "_{0}_{1}".format(platform, device_name)
             # Now we create that folder
             os.mkdir(initial_path)

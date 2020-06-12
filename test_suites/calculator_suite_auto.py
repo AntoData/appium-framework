@@ -2,19 +2,18 @@ import time
 import unittest
 import selenium
 from app_window_objects import calculatormainapp as cmp
-#from desktopBrowserRecorder import DesktopBrowserRecorder
+# from desktopBrowserRecorder import DesktopBrowserRecorder
 from videoRecorder.videoRecorder.desktopBrowserRecorder import DesktopBrowserRecorder
-import os
+
 
 class CalculatorTestSuite(unittest.TestCase):
 
     video_recorder = None
     driver = None
 
-
     def tearDown(self):
         if self.video_recorder is not None:
-            self.video_recorder.stopRecordingSession()
+            self.video_recorder.stop_recording_session()
         if self.driver is not None:
             self.driver.quit()
             time.sleep(60)
@@ -23,7 +22,7 @@ class CalculatorTestSuite(unittest.TestCase):
         self.calculator = cmp.CalculatorMainApp()
         self.driver = self.calculator.driver
         self.video_recorder = DesktopBrowserRecorder(".mp4", self.calculator.driver)
-        self.video_recorder.startRecordingSession()
+        self.video_recorder.start_recording_session()
 
     def test_add_two_numbers(self):
         n: str = str(8)
@@ -90,7 +89,7 @@ class CalculatorTestSuite(unittest.TestCase):
         self.assertEqual(int(n) / (int(m)), result)
 
     def test_delete_number(self):
-        self.video_recorder.startRecordingSession()
+        self.video_recorder.start_recording_session()
         try:
             self.calculator.click_on_arrow()
         except selenium.common.exceptions.NoSuchElementException:

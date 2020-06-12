@@ -183,7 +183,7 @@ def scheduler():
                 # If appium_server was created
                 if appium_server is not None:
                     # We stop the thread
-                    #appium_server.join()
+                    # appium_server.join()
                     pass
                 # We stop the appium server
                 stop_appium_service_cmd_line()
