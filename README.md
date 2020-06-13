@@ -17,6 +17,12 @@ Our project contains the following packages, modules and files:
   - <i>The method setUp should be overwritten and contain the instantiation of the main/first page object that is the one that connects to appium and also where we create the object to record a video and start the recording session. Also we should overwrite the method tearDown to stop the recording session after every test</i>
 - tmp: Here is where we will save a tmp file where we will tell the class appwindowobject which JSON file it should extract the capabilities from in this iteration when using the scheduler feature.
 - utils: Here we included several modules that contains several interesting and useful modules for this framework. For instance, a script that helps us to get the JSON file to execute test in our current device and app.
+  - <b>bitbar_file_uploader.py</b>: This module allows us to automatically upload the file apk we selected in the folder apks to BitBar when we want to run a remote test in BitBar.
+  - <b>capabilities_utils.py</b>: This module offers several methods to get the capabilities we need in a driver to run an appium tests. These are used in script_capabilities.py to generate the JSON file where we will store the capabilities
+  - <b>report_utils.py</b>: This module offers several method to generate and write the txt report in folder test_reports in each execution of our test scheduler.
+  - <b>screenshot_utils.py</b>: This module provides the feature in which all our screenshots in an appium test are stored in the same folder in folder screenshots and also gives them a personalized name.
+  - <b>script_capabilities.py</b>: We run this module with our device connected and our application running in the forefront to get the capabilities needed to run an appium test in a JSON file.
+  - <b>webdriver_find_utils.py</b>: This module is the one we use to offer the property locators in our page object classes. That property will offer find methods with implicit wait and a time out. We will get an screenshot everytime we execute them too and also provide the ability to get screenshots when we want, all of them will go to the correct folder in folder screenshots.
 - videoRecorder: Here we included the classes that allow us to record videos for each test
 - videos: In this folder we will create the folders where we will save our videos for each recording session
 - <b>interactive_test_runner.py</b>: If everything is set up fine, when executing this script our tests will start running in the order specified in scheduled-tests.ini
