@@ -9,6 +9,7 @@ from utils.bitbar_file_uploader import upload_file_to_bitbar
 from utils.capabilities_utils import get_capabilities_from_file
 import utils.webdriver_find_utils as wu
 from utils.screenshot_utils import ScreenshotUtils
+from videoRecorder.videoRecorder.desktopBrowserRecorder import DesktopBrowserRecorder
 
 
 class AppWindowObject(ABC):
@@ -110,6 +111,8 @@ class AppWindowObject(ABC):
 
             # We create the instance of the webdriver for our app
             self.driver: webdriver = webdriver.Remote(server, self.capabilities)
+
+            self.video_recorder = DesktopBrowserRecorder(".mp4", self.driver)
 
             # As this is the first activity of the test, we have to create the folder for the screenshots for this
             # test in the folder screenshots

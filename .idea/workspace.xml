@@ -2,7 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0b508150-1ee4-49ce-97a7-0fa5d8d3c4aa" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/utils/script_capabilities.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils/script_capabilities.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/abs_class/appwindowobject.py" beforeDir="false" afterPath="$PROJECT_DIR$/abs_class/appwindowobject.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test_suites/calculator_suite.py" beforeDir="false" afterPath="$PROJECT_DIR$/test_suites/calculator_suite.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test_suites/calculator_suite_auto.py" beforeDir="false" afterPath="$PROJECT_DIR$/test_suites/calculator_suite_auto.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test_suites/instagram_suite.py" beforeDir="false" afterPath="$PROJECT_DIR$/test_suites/instagram_suite.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tmp/current_test_profile.txt" beforeDir="false" afterPath="$PROJECT_DIR$/tmp/current_test_profile.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -263,6 +268,10 @@
           <url>file://$PROJECT_DIR$/utils/capabilities_utils.py</url>
           <line>74</line>
           <option name="timeStamp" value="77" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/utils/capabilities_utils.py</url>
+          <option name="timeStamp" value="80" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

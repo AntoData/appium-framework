@@ -21,7 +21,7 @@ class CalculatorTestSuite(unittest.TestCase):
     def setUp(self) -> None:
         self.calculator = cmp.CalculatorMainApp()
         self.driver = self.calculator.driver
-        self.video_recorder = DesktopBrowserRecorder(".mp4", self.calculator.driver)
+        self.video_recorder = self.calculator.video_recorder
         self.video_recorder.start_recording_session()
 
     def test_add_two_numbers(self):

@@ -25,7 +25,7 @@ class InstagramTestSuite(unittest.TestCase):
     def setUp(self) -> None:
         self.instagram = ins.InstagramLoginApp()
         self.driver = self.instagram.driver
-        self.video_recorder = DesktopBrowserRecorder(".mp4", self.instagram.driver)
+        self.video_recorder = self.instagram.video_recorder
 
     def test_login(self, username: str = None) -> InstagramMainApp:
         if username is None:
