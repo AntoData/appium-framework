@@ -8,9 +8,6 @@ from videoRecorder.videoRecorder.desktopBrowserRecorder import DesktopBrowserRec
 
 class CalculatorTestSuite(unittest.TestCase):
 
-    video_recorder = None
-    driver = None
-
     def tearDown(self):
         self.calculator.destroy()
         time.sleep(60)

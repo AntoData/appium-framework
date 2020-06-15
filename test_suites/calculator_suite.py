@@ -6,9 +6,6 @@ from app_window_objects import calculatormainapp as cmp
 
 class CalculatorTestSuite(unittest.TestCase):
 
-    video_recorder = None
-    driver = None
-
     def tearDown(self):
         self.calculator.destroy()
         time.sleep(60)

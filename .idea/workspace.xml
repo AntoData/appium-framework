@@ -3,11 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="0b508150-1ee4-49ce-97a7-0fa5d8d3c4aa" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/abs_class/appwindowobject.py" beforeDir="false" afterPath="$PROJECT_DIR$/abs_class/appwindowobject.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/test_suites/calculator_suite.py" beforeDir="false" afterPath="$PROJECT_DIR$/test_suites/calculator_suite.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/test_suites/calculator_suite_auto.py" beforeDir="false" afterPath="$PROJECT_DIR$/test_suites/calculator_suite_auto.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/test_suites/instagram_suite.py" beforeDir="false" afterPath="$PROJECT_DIR$/test_suites/instagram_suite.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tmp/current_test_profile.txt" beforeDir="false" afterPath="$PROJECT_DIR$/tmp/current_test_profile.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -256,22 +254,22 @@
       <breakpoints>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/test_suites/calculator_suite.py</url>
-          <line>12</line>
+          <line>9</line>
           <option name="timeStamp" value="83" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/test_suites/calculator_suite.py</url>
-          <line>19</line>
+          <line>16</line>
           <option name="timeStamp" value="84" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/test_suites/calculator_suite_auto.py</url>
-          <line>18</line>
+          <line>15</line>
           <option name="timeStamp" value="86" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/test_suites/calculator_suite_auto.py</url>
-          <line>14</line>
+          <line>11</line>
           <option name="timeStamp" value="87" />
         </line-breakpoint>
       </breakpoints>

@@ -13,8 +13,6 @@ from videoRecorder.videoRecorder.desktopBrowserRecorder import DesktopBrowserRec
 
 class InstagramTestSuite(unittest.TestCase):
 
-    video_recorder = None
-
     def tearDown(self):
         self.instagram.destroy()
         time.sleep(60)
