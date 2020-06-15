@@ -7,8 +7,6 @@ from app_window_objects.instagramdmsapp import InstagramDMsApp
 from app_window_objects.instagrammainapp import InstagramMainApp
 from app_window_objects.instagramprofileapp import InstagramProfileApp
 from appium.webdriver import webelement
-# from desktopBrowserRecorder import DesktopBrowserRecorder
-from videoRecorder.videoRecorder.desktopBrowserRecorder import DesktopBrowserRecorder
 
 
 class InstagramTestSuite(unittest.TestCase):

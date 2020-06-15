@@ -2,9 +2,6 @@ import time
 import unittest
 import selenium
 from app_window_objects import calculatormainapp as cmp
-# from desktopBrowserRecorder import DesktopBrowserRecorder
-from videoRecorder.videoRecorder.desktopBrowserRecorder import DesktopBrowserRecorder
-
 
 class CalculatorTestSuite(unittest.TestCase):
 
