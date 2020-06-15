@@ -12,17 +12,11 @@ class CalculatorTestSuite(unittest.TestCase):
     driver = None
 
     def tearDown(self):
-        if self.video_recorder is not None:
-            self.video_recorder.stop_recording_session()
-        if self.driver is not None:
-            self.driver.quit()
-            time.sleep(60)
+        self.calculator.destroy()
+        time.sleep(60)
 
     def setUp(self) -> None:
         self.calculator = cmp.CalculatorMainApp()
-        self.driver = self.calculator.driver
-        self.video_recorder = self.calculator.video_recorder
-        self.video_recorder.start_recording_session()
 
     def test_add_two_numbers(self):
         n: str = str(8)

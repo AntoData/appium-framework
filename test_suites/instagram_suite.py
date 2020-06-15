@@ -16,16 +16,11 @@ class InstagramTestSuite(unittest.TestCase):
     video_recorder = None
 
     def tearDown(self):
-        if self.video_recorder is not None:
-            self.video_recorder.stop_recording_session()
-        if self.driver is not None:
-            self.driver.quit()
-            time.sleep(60)
+        self.instagram.destroy()
+        time.sleep(60)
 
     def setUp(self) -> None:
         self.instagram = ins.InstagramLoginApp()
-        self.driver = self.instagram.driver
-        self.video_recorder = self.instagram.video_recorder
 
     def test_login(self, username: str = None) -> InstagramMainApp:
         if username is None:

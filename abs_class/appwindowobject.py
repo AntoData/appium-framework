@@ -112,7 +112,9 @@ class AppWindowObject(ABC):
             # We create the instance of the webdriver for our app
             self.driver: webdriver = webdriver.Remote(server, self.capabilities)
 
+            # We automatically start a recording session to record all our interactions with appium
             self.video_recorder = DesktopBrowserRecorder(".mp4", self.driver)
+            self.video_recorder.start_recording_session()
 
             # As this is the first activity of the test, we have to create the folder for the screenshots for this
             # test in the folder screenshots
@@ -192,3 +194,11 @@ class AppWindowObject(ABC):
         config.read(config_path)
         # We return the url assigned to the parameter with name class_name in section SERVERS
         return config["SERVERS"][class_name]
+
+    def destroy(self):
+        """
+        This method stops our current recording session and quits our driver, destroys our object
+        :return: None
+        """
+        self.video_recorder.stop_recording_session()
+        self.driver.quit()
