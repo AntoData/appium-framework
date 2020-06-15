@@ -29,3 +29,5 @@ Our project contains the following packages, modules and files:
 - npm-requirements.txt: Requirements for npm
 - requirements.txt: Required Python modules for this project to ber installed using pip install
 - <b>scheduled-tests.ini</b>: In this file, we will provide the order in which we want our test suites to be executed. Also, we will set in each test suite which JSON file to use and which device to run our tests in.
+
+<h4> To get to know how to use this project, go to our wiki: https://github.com/AntoData/appium-framework/wiki </h4>
