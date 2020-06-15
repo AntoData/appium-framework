@@ -11,6 +11,10 @@ import utils.webdriver_find_utils as wu
 from utils.screenshot_utils import ScreenshotUtils
 from videoRecorder.videoRecorder.desktopBrowserRecorder import DesktopBrowserRecorder
 
+"""
+To get to know how to use this project: https://github.com/AntoData/appium-framework/wiki
+"""
+
 
 class AppWindowObject(ABC):
     """

@@ -3,6 +3,11 @@ import unittest
 import selenium
 from app_window_objects import calculatormainapp as cmp
 
+"""
+To get to know how to use this project: https://github.com/AntoData/appium-framework/wiki
+"""
+
+
 class CalculatorTestSuite(unittest.TestCase):
 
     def tearDown(self):

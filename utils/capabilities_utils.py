@@ -5,6 +5,7 @@ import json as js
 import sys
 import os
 """
+To get to know how to use this project: https://github.com/AntoData/appium-framework/wiki
 This module provides a collection of methods that automate the process of getting the capabilities needed to
 instanciate an appium webdriver. We execute the adb commands provided by the Android SDK. We turn it into a json or
 dict and write it in files o get it from files.

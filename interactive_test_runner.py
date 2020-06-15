@@ -18,6 +18,8 @@ sys.path.append(str(pathlib.Path().absolute())+"/../videoRecorder/videoRecorder"
 sys.path.append(str(pathlib.Path().absolute())+"/../videoRecorder")
 
 """
+To get to know how to use this project: https://github.com/AntoData/appium-framework/wiki
+
 This module is the one we use when we want to run several test suites in different devices. We only have to run this
 module completely and set the file "scheduled-tests.ini" in the main folder. We set the test in that file as follows:
 [Test 1]

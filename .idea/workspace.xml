@@ -3,9 +3,15 @@
   <component name="ChangeListManager">
     <list default="true" id="0b508150-1ee4-49ce-97a7-0fa5d8d3c4aa" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test_suites/calculator_suite.py" beforeDir="false" afterPath="$PROJECT_DIR$/test_suites/calculator_suite.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/abs_class/appwindowobject.py" beforeDir="false" afterPath="$PROJECT_DIR$/abs_class/appwindowobject.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/interactive_test_runner.py" beforeDir="false" afterPath="$PROJECT_DIR$/interactive_test_runner.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/test_suites/calculator_suite_auto.py" beforeDir="false" afterPath="$PROJECT_DIR$/test_suites/calculator_suite_auto.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test_suites/instagram_suite.py" beforeDir="false" afterPath="$PROJECT_DIR$/test_suites/instagram_suite.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/utils/bitbar_file_uploader.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils/bitbar_file_uploader.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/utils/capabilities_utils.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils/capabilities_utils.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/utils/report_utils.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils/report_utils.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/utils/screenshot_utils.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils/screenshot_utils.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/utils/script_capabilities.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils/script_capabilities.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/utils/webdriver_find_utils.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils/webdriver_find_utils.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -264,12 +270,12 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/test_suites/calculator_suite_auto.py</url>
-          <line>15</line>
+          <line>17</line>
           <option name="timeStamp" value="86" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/test_suites/calculator_suite_auto.py</url>
-          <line>11</line>
+          <line>13</line>
           <option name="timeStamp" value="87" />
         </line-breakpoint>
       </breakpoints>

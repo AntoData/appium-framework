@@ -1,6 +1,7 @@
 from utils.capabilities_utils import to_file_capabilities
 
 """
+To get to know how to use this project: https://github.com/AntoData/appium-framework/wiki
 This is a script that automates the process of getting the right capabilities to instantiate our webdriver instance
 to perform our tests. We should have our app running and the screen unlocked and then provide a name for the file. In
 order for this to work completely with our framework the name of the file should be the same name as the main activity

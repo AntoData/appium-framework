@@ -2,6 +2,10 @@ import subprocess
 import re
 import os
 
+"""
+To get to know how to use this project: https://github.com/AntoData/appium-framework/wiki
+"""
+
 
 def upload_file_to_bitbar(file_apk: str) -> str:
     """
