@@ -2,6 +2,10 @@ from appium.webdriver import webdriver
 from datetime import datetime
 from selenium.common.exceptions import WebDriverException
 
+"""
+To get to know how to use this project: https://github.com/AntoData/appium-framework/wiki
+"""
+
 
 class ScreenshotUtils:
     """

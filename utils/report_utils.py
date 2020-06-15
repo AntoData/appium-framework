@@ -1,5 +1,9 @@
 from datetime import datetime
 
+"""
+To get to know how to use this project: https://github.com/AntoData/appium-framework/wiki
+"""
+
 
 class ReportUtils:
     """
